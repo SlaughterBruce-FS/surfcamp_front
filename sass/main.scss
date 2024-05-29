@@ -7,10 +7,26 @@
 @tailwind components;
 @tailwind utilities;
 
-.hero{
+.hero {
     padding: 18rem 4.3rem 0;
 }
 
-.hero-img{
+.hero-img {
     border-radius: 0 0 200px 200px;
+}
+
+.reversedimg {
+    border-radius: 300px 0 0 300px;
+}
+
+.not-reversedimg {
+    border-radius: 0 300px 300px 0;
+}
+
+.reversed {
+    padding-left: 4.8rem;
+}
+
+.not-reversed {
+    padding-right: 4.8rem;
 }

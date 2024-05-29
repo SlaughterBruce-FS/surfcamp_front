@@ -2,7 +2,7 @@ import Image from "next/image";
 import Hero from "./_components/Hero";
 import InfoBlock from "./_components/infoBlock";
 
-export default function Home({ data}) {
+export default function Home({ data }) {
   const heroheadline = (
     <>
       <h1>barrel.</h1>
@@ -14,11 +14,11 @@ export default function Home({ data}) {
   const infoBlockData = {
     headline: "the experience",
     text: (
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam saepe nihil dolorum soluta assumenda beatae ad minima dignissimos quidem accusantium.</p>
+      <p className="mb-14">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam saepe nihil dolorum soluta assumenda beatae ad minima dignissimos quidem accusantium.</p>
     ),
     imgSrc: "/assets/surfers.jpeg",
     button: (
-      <button>Book Now</button>
+      <button className="bg-teal-500 rounded-full px-5 py-3 text-white capitalize text-2xl">Book Now</button>
     ),
     reversed: true
   }
@@ -26,11 +26,11 @@ export default function Home({ data}) {
   const infoBlock2Data = {
     headline: "the experience",
     text: (
-      <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam saepe nihil dolorum soluta assumenda beatae ad minima dignissimos quidem accusantium.</p>
+      <p className="mb-14">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam saepe nihil dolorum soluta assumenda beatae ad minima dignissimos quidem accusantium.</p>
     ),
     imgSrc: "/assets/photo1.jpeg",
     button: (
-      <button>Book Now</button>
+      <button className="bg-teal-500 rounded-full px-5 py-3 text-white capitalize text-2xl">Book Now</button>
     ),
     reversed: false
   }
