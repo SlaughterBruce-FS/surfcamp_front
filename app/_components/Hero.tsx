@@ -3,20 +3,21 @@ import React from 'react'
 
 
 interface HeroProps {
-    heroheadline: string;
+    headline: string;
+    imgSrc: string;
 }
 
 
-const Hero: React.FC<HeroProps> = ({ heroheadline }) => {
+const Hero: React.FC<HeroProps> = ({ imgSrc, headline }) => {
     return (
-        <section>
-            <div>
-                <img src="/assets/hero1.jpg" alt="hero image" />
+        <section className='hero h-[83rem] w-full relative mb-[12.5rem]'> 
+            <div className='h-[100%] w-full absolute top-0 left-0 -z-10'>
+                <img src={imgSrc} alt="hero image" className='hero-img w-full h-full object-cover object-center border' />
             </div>
-            <div>
-                {heroheadline}
+            <div className='text-6xl font-bold'>
+                {headline}
             </div>
-            <Link href='/events'>book now</Link>
+            <Link className='bg-teal-300 rounded-full px-5 py-3 text-white capitalize text-2xl' href='/events'>book now</Link>
         </section>
     )
 }

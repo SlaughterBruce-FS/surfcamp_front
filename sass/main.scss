@@ -6,3 +6,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.hero{
+    padding: 18rem 4.3rem 0;
+}
+
+.hero-img{
+    border-radius: 0 0 200px 200px;
+}
