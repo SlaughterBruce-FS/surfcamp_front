@@ -1,9 +1,50 @@
 import Image from "next/image";
 import Hero from "./_components/Hero";
 import InfoBlock from "./_components/infoBlock";
+import axios from "axios";
+import { fetchStraiData, processInfoBlocks } from "@/utils/utils";
 
-export default function Home({ data }) {
-  const heroheadline = (
+interface InfoBlock {
+  id: number,
+  __component: string,
+  headline: string,
+  slug: string,
+  paragraph: string,
+  islandscape: boolean,
+  imageshowright: boolean,
+  imageCaption: string,
+  exerpt: string,
+  featuredImage: string,
+  image: {
+    data: {
+      id: number,
+      attributes: {
+        url: string,
+      }
+    },
+    component?: string
+  },
+  textc: string,
+  text: string,
+  button: {
+    slug: string,
+    text: string,
+  },
+  reversed: string,
+  imgSrc: string
+
+
+}
+export default async function Home() {
+
+  const data = await fetchStraiData('infoblocks-landing?populate=deep');
+  // console.log(data);
+
+  const infoBlockData = processInfoBlocks(data);
+
+  // console.log(infoBlockData);
+
+  const heroheadline: React.ReactNode = (
     <>
       <h1>barrel.</h1>
       <h1>your.</h1>
@@ -11,36 +52,14 @@ export default function Home({ data }) {
     </>
   )
 
-  const infoBlockData = {
-    headline: "the experience",
-    text: (
-      <p className="mb-14">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam saepe nihil dolorum soluta assumenda beatae ad minima dignissimos quidem accusantium.</p>
-    ),
-    imgSrc: "/assets/surfers.jpeg",
-    button: (
-      <button className="bg-teal-500 rounded-full px-5 py-3 text-white capitalize text-2xl">Book Now</button>
-    ),
-    reversed: true
-  }
 
-  const infoBlock2Data = {
-    headline: "the experience",
-    text: (
-      <p className="mb-14">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Ullam saepe nihil dolorum soluta assumenda beatae ad minima dignissimos quidem accusantium.</p>
-    ),
-    imgSrc: "/assets/photo1.jpeg",
-    button: (
-      <button className="bg-teal-500 rounded-full px-5 py-3 text-white capitalize text-2xl">Book Now</button>
-    ),
-    reversed: false
-  }
 
 
   return (
     <main className=" ">
       <Hero headline={heroheadline} imgSrc="/assets/hero1.jpg" />
-      <InfoBlock data={infoBlockData} />
-      <InfoBlock data={infoBlock2Data} />
+
+      {infoBlockData.map((data: InfoBlock) => <InfoBlock key={data.id} data={data} />)}
     </main>
   );
 }

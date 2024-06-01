@@ -8,21 +8,21 @@ const Header = () => {
     const navItems = [
         {
             display: "the camp",
-            sluf: "/"
+            slug: "/"
         }, {
             display: "the experience",
-            sluf: "/experience"
+            slug: "/experience"
         }, {
             display: "the blog",
-            sluf: "/blog"
+            slug: "/blog"
         }
     ]
     return (
-        <header className="flex flex-row justify-between items-center container mx-auto my-4 absolute top-0 left-0 right-0">
+        <header className="flex flex-row justify-between items-center container mx-auto my-4 absolute top-0 left-0 right-0 z-40">
             <Image className="header__logo" src={logo} height={80} alt="logo" />
             <ul className="gap gap-10 flex text-3xl capitalize">
                 {navItems.map((link, index) => (
-                    <Link key={index} href={link.sluf} >{link.display}</Link>
+                    <Link key={index} href={link.slug} >{link.display}</Link>
                 ))}
             </ul>
 

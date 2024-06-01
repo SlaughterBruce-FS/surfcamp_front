@@ -3,15 +3,15 @@ import React from 'react'
 
 
 interface HeroProps {
-    headline: string;
-    imgSrc: string;
+    headline: React.ReactNode,
+    imgSrc: string
 }
 
 
-const Hero: React.FC<HeroProps> = ({ imgSrc, headline }) => {
+function Hero({ imgSrc, headline }: HeroProps) {
     return (
-        <section className='hero h-[83rem] w-full relative mb-[12.5rem]'> 
-            <div className='h-[100%] w-full absolute top-0 left-0 -z-10'>
+        <section className='hero h-[83rem] w-full relative mb-[12.5rem]'>
+            <div className='h-[100%] w-full absolute top-0 left-0 -z-10 order-first'>
                 <img src={imgSrc} alt="hero image" className='hero-img w-full h-full object-cover object-center border' />
             </div>
             <div className='text-6xl font-bold'>
