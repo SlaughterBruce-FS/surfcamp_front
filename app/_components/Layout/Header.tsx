@@ -18,7 +18,7 @@ const Header = () => {
         }
     ]
     return (
-        <header className="flex flex-row justify-between items-center container mx-auto my-4 absolute top-0 left-0 right-0 z-40">
+        <header className="flex flex-row justify-between items-center container mx-auto my-4 absolute top-0 left-0 right-0 z-40 text-white">
             <Image className="header__logo" src={logo} height={80} alt="logo" />
             <ul className="gap gap-10 flex text-4xl capitalize">
                 {navItems.map((link, index) => (
