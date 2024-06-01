@@ -23,8 +23,8 @@ function FeaturedArticle({ article }: Article) {
                 <img src={`http://localhost:1337${article.featuredImage}`} alt="pic" className='w-full h-[35.5rem] object-cover rounded-tl-3xl rounded-tr-3xl' />
             </div>
             <div className='p-8 bg-[#d7c094] flex flex-col justify-between rounded-bl-3xl rounded-br-3xl grow'>
-                <h5 className='text-3xl mb-5'>{article.headline}</h5>
-                <p className='text-2xl'>{formDate(article.publishedAt)}</p>
+                <h5 className='text-5xl mb-5'>{article.headline}</h5>
+                <p className='text-3xl'>{formDate(article.publishedAt)}</p>
             </div>
 
         </Link>

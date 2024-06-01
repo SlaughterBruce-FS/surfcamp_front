@@ -43,8 +43,8 @@ const HighlightArticles = ({ data }: BlogArticleComponent) => {
         <article className='flex flex-col-reverse md:flex-row gap-10 '>
             <div className='flex-1'>
                 <h3 className='text-7xl mt-14 mb-16'>{headline}</h3>
-                <p className='text-2xl mb-16'>{exerpt}</p>
-                <Link className='bg-teal-400 text-3xl text-white px-8 py-6 rounded-full' href={`/blog/${slug}`} >read more</Link>
+                <p className='text-4xl mb-16'>{exerpt}</p>
+                <Link className='bg-teal-400 text-4xl text-white px-8 py-6 rounded-full' href={`/blog/${slug}`} >read more</Link>
             </div>
             <div className='flex-1'>
                 <img className='rounded-3xl' src={`http://localhost:1337${featuredImage}`} alt="img" />

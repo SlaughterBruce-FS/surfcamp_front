@@ -24,13 +24,15 @@ function ParagraphWithImage({ data }: paraWithImage) {
     // const imgUrl = data.image.data.attributes.url
 
     return (
-        <div className={`flex ${data.imageshowright ? 'flex-row' : 'flex-row-reverse'} text-2xl gap-12`}>
+        <div className={`flex ${data.imageshowright ? 'flex-row' : 'flex-row-reverse'}  gap-12 mb-20`}>
             <div className='flex-1'>
-                <p>{data.paragraph}</p>
+                <p className='text-4xl leading-10 '>{data.paragraph}</p>
             </div>
-            <div className='flex-1'>
-                <img src={`http://localhost:1337${data.image.data.attributes.url}`} alt="" />
-                <p className='text-center text-xl'>{data.imageCaption}</p>
+            <div className='flex-1 w-full h-auto'>
+                <img src={`http://localhost:1337${data.image.data.attributes.url}`} className='h-full w-full object-cover' alt="" />
+                {data.imageCaption ?
+                    <p className='text-center text-xl'>{data.imageCaption}</p>
+                    : ''}
             </div>
         </div>
     )

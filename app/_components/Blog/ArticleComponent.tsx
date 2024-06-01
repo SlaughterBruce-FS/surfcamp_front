@@ -2,6 +2,8 @@ import { reauthenticateWithCredential } from 'firebase/auth';
 import React from 'react'
 import ArticleHeadline from './ArticleHeadline';
 import ParagraphWithImage from './ParagraphWithImage';
+import ArticleParagraph from './ArticleParagraph';
+import ArticleImage from './ArticleImage';
 // import { BlogArticleComponent } from '@/utils/interface';
 
 
@@ -22,7 +24,8 @@ interface ArticleContent {
                     url?: string,
                 }
             }
-        }
+        },
+
 
     },
 }
@@ -41,9 +44,9 @@ function ArticleComponent({ componentt }: ArticleContent) {
         case 'paragraphwithimage':
             return <ParagraphWithImage data={componentt} />
         case 'paragraph':
-            return <h1>paragraph</h1>
+            return <ArticleParagraph data={componentt} />
         case 'image':
-            return <h1>image</h1>
+            return <ArticleImage data={componentt} />
         default:
             return <h1>component not found </h1>
     }

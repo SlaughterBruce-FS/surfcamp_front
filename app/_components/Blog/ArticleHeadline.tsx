@@ -12,7 +12,7 @@ interface Headline {
 
 function ArticleHeadline({ headlinee }: Headline) {
     return (
-        <h3 id={headlinee.slug} className='text-4xl mb-4'>{headlinee.headline}</h3>
+        <h3 id={headlinee.slug} className='text-7xl mb-10'>{headlinee.headline}</h3>
     )
 }
 

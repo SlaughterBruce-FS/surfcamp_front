@@ -31,7 +31,7 @@ function FeaturedItem({ headline, items }: FeaturedItemProps) {
 
     return (
         <section className='py-60 flex flex-col justify-center items-center'>
-            <h3 className='text-5xl mb-16 font-bold mr-auto'>{headline || "Our Featured articles"}</h3>
+            <h3 className='text-7xl mb-16 font-bold mr-auto'>{headline || "Our Featured articles"}</h3>
             <div className='grid grid-cols-3  gap-8 mb-12 '>
                 {items
                     .slice(0, itemNumber)
