@@ -11,7 +11,6 @@ interface BlogPageSingleProps {
     };
 }
 
-
 interface Articlee {
     slug: string;
 }
@@ -29,8 +28,6 @@ interface ImageData {
         url?: string;
     };
 }
-
-
 
 interface Article {
     id: number,
@@ -50,11 +47,7 @@ export default async function BlogPageSingle({ params }: BlogPageSingleProps) {
 
     const { slug } = params
 
-
-
     const articles = await fetchArticlesData();
-
-
 
     const article = articles.find((article: Articlee) => article.slug === slug)
 
@@ -70,8 +63,6 @@ export default async function BlogPageSingle({ params }: BlogPageSingleProps) {
         </div>
     )
 }
-
-
 
 export async function generateStaticParams() {
     const article = await fetchBlogData("blog-articles")

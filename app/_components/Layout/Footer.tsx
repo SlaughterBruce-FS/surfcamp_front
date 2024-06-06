@@ -39,7 +39,7 @@ const Footer = () => {
                     ))}
                 </ul>
             </div>
-            <div className='flex justify-between items-center my-4 container mx-auto'>
+            <div className='flex justify-between items-center mt-4 container mx-auto'>
                 <ul className="gap gap-10 flex text-2xl capitalize">
                     {footerItems.map((link, index) => (
                         <Link key={index} href={link.sluf} >{link.display}</Link>

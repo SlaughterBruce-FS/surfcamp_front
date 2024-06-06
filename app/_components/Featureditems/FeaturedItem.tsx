@@ -40,7 +40,7 @@ function FeaturedItem({ headline, items }: FeaturedItemProps) {
                     ))}
             </div>
             {itemNumber < items.length && (
-                <button className='bg-teal-400 px-6 py-4 rounded-full text-white text-2xl' onClick={onShowMore}>See more</button>
+                <button className='bg-teal-400 px-6 py-4 rounded-full text-white text-3xl' onClick={onShowMore}>See more</button>
             )}
         </section>
     )

@@ -2,7 +2,8 @@ import Image from "next/image";
 import Hero from "./_components/Hero";
 import InfoBlock from "./_components/infoBlock";
 import axios from "axios";
-import { fetchStraiData, processInfoBlocks } from "@/utils/utils";
+import { fetchArticlesData, fetchStraiData, processInfoBlocks } from "@/utils/utils";
+import BlogFront from "./_components/Featureditems/BlogFront";
 
 interface InfoBlock {
   id: number,
@@ -35,6 +36,7 @@ interface InfoBlock {
 
 
 }
+
 export default async function Home() {
 
   const data = await fetchStraiData('infoblocks-landing?populate=deep');
@@ -42,7 +44,8 @@ export default async function Home() {
 
   const infoBlockData = processInfoBlocks(data);
 
-  // console.log(infoBlockData);
+  const articles = await fetchArticlesData();
+
 
   const heroheadline: React.ReactNode = (
     <>
@@ -60,6 +63,8 @@ export default async function Home() {
       <Hero headline={heroheadline} imgSrc="/assets/hero1.jpg" />
 
       {infoBlockData.map((data: InfoBlock) => <InfoBlock key={data.id} data={data} />)}
+
+      <BlogFront items={articles} />
     </main>
   );
 }

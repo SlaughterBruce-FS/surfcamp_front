@@ -3,6 +3,7 @@ import HighlightArticles from '../_components/Blog/HighlightArticles'
 import FeaturedItem from '../_components/Featureditems/FeaturedItem'
 import axios from 'axios'
 import { fetchBlogData, fetchStraiData, processArticleData } from '@/utils/utils'
+import Subscribe from '../_components/Subscribe'
 
 
 interface Article {
@@ -29,7 +30,7 @@ async function Blog() {
     return (
         <main className='blog-page'>
             <HighlightArticles data={highlightArticleData} />
-
+            <Subscribe />
             <FeaturedItem headline={undefined} items={featuredArticles} />
         </main>
     )
