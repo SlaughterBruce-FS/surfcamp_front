@@ -11,7 +11,7 @@ const infoBlock = ({ data }: BlogArticleComponent) => {
 
     <div className={`flex gap-16 mt-8 ${reversed ? 'flex-row-reverse' : 'flex-row'} ${reversed ? 'reversed' : 'not-reversed'}`}>
 
-      <img src={`${IMAGE_URL}${imgSrc}`} className={`w-full flex-1 ${reversed ? 'reversedimg' : 'not-reversedimg'}`} alt="pic text" />
+      <img src={`https://octopus-app-yk8af.ondigitalocean.app${imgSrc}`} className={`w-full flex-1 ${reversed ? 'reversedimg' : 'not-reversedimg'}`} alt="pic text" />
       <div className='flex-1 text-4xl'>
         <h2 className='text-7xl font-bold mt-16 mb-14 '>{headline}</h2>
         <ReactMarkdown className='mb-16'>{textc}</ReactMarkdown >

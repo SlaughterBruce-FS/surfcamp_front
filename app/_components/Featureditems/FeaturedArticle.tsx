@@ -20,7 +20,7 @@ function FeaturedArticle({ article }: Article) {
     return (
         <Link href={`/blog/${article.slug}`} className='overflow-hidden flex flex-col'>
             <div >
-                <img src={`${IMAGE_URL}${article.featuredImage}`} alt="pic" className='w-full h-[35.5rem] object-cover rounded-tl-3xl rounded-tr-3xl' />
+                <img src={`https://octopus-app-yk8af.ondigitalocean.app${article.featuredImage}`} alt="pic" className='w-full h-[35.5rem] object-cover rounded-tl-3xl rounded-tr-3xl' />
             </div>
             <div className='p-8 bg-[#d7c094] flex flex-col justify-between rounded-bl-3xl rounded-br-3xl grow'>
                 <h5 className='text-5xl mb-5'>{article.headline}</h5>

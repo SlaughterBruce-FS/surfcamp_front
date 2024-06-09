@@ -32,7 +32,7 @@ function ParagraphWithImage({ data }: paraWithImage) {
                 <p className='text-4xl leading-10 '>{data.paragraph}</p>
             </div>
             <div className='flex-1 w-full h-auto'>
-                <img src={`${IMAGE_URL}${data.image.data.attributes.url}`} className='h-full w-full object-cover' alt="" />
+                <img src={`https://octopus-app-yk8af.ondigitalocean.app${data.image.data.attributes.url}`} className='h-full w-full object-cover' alt="" />
                 {data.imageCaption ?
                     <p className='text-center text-xl'>{data.imageCaption}</p>
                     : ''}

@@ -19,7 +19,7 @@ function ArticleImage({ data }: Article) {
 
     return (
         <div className='mb-16 flex items-center justify-center'>
-            <img className='h-[500px] w-[full] object-cover' src={`${IMAGE_URL}${data.image.data.attributes.url}`} alt="text" />
+            <img className='h-[500px] w-[full] object-cover' src={`https://octopus-app-yk8af.ondigitalocean.app${data.image.data.attributes.url}`} alt="text" />
         </div>
     )
 }

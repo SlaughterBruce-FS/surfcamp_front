@@ -48,7 +48,7 @@ const HighlightArticles = ({ data }: BlogArticleComponent) => {
                 <Link className='bg-teal-400 text-4xl text-white px-8 py-6 rounded-full' href={`/blog/${slug}`} >read more</Link>
             </div>
             <div className='flex-1'>
-                <img className='rounded-3xl' src={`${IMAGE_URL}${featuredImage}`} alt="img" />
+                <img className='rounded-3xl' src={`https://octopus-app-yk8af.ondigitalocean.app${featuredImage}`} alt="img" />
             </div>
         </article>
     )
