@@ -57,14 +57,14 @@ export async function fetchBlogData(route: string) {
 export function processArticleData(data: AxiosResponse<any, any>) {
     const featuredArticleRaw = data.data.data;
 
-    const processedArticles = featuredArticleRaw.map((article: { attributes: { featuredImage: { data: { attributes: { url: any; }; }; }; }; id: any; }) => ({
+    const processedArticles = featuredArticleRaw.map((article) => ({
         ...article.attributes,
         id: article.id,
         featuredImage: article.attributes.featuredImage.data.attributes.url
 
     }));
 
-    processedArticles.sort((a: { publishedAt: { getTime: () => number; }; }, z: { publishedAt: { getTime: () => number; }; }) => z.publishedAt.getTime() - a.publishedAt.getTime());
+    processedArticles.sort((a,z) => new Date(z.publishedAt) - new Date(a.publishedAt))
 
 
 
@@ -84,7 +84,7 @@ export async function fetchArticlesData() {
 
     }));
 
-    processedArticles.sort((a: { publishedAt: { getTime: () => number; }; }, z: { publishedAt: { getTime: () => number; }; }) => z.publishedAt.getTime() - a.publishedAt.getTime());
+    processedArticles.sort((a,z) => new Date(z.publishedAt) - new Date(a.publishedAt))
 
     return processedArticles;
 }
