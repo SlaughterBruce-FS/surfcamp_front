@@ -53,18 +53,57 @@ export async function fetchBlogData(route: string) {
 
 
 
+interface PArticle {
+    id: number,
+    attributes: {
+      headline: string,
+      exerpt: string,
+      slug: string,
+      author: string,
+      isHighlightArticle: boolean,
+      createdAt: Date,
+      updatedAt: Date,
+      publishedAt: string,
+      featuredImage: FeatImage,
+    //   articleContent: [Array]
+    }
+}
+
+interface Particle {
+
+    
+ 
+      publishedAt: string,
+
+  
+}
+
+interface FeatImage{
+    data: {
+        id: number,
+        attributes: {
+            url: string,
+        }
+    },
+}
+
+
+
 
 export function processArticleData(data: AxiosResponse<any, any>) {
     const featuredArticleRaw = data.data.data;
+    // console.log("the article", featuredArticleRaw)
 
-    const processedArticles = featuredArticleRaw.map((article) => ({
+    const processedArticles = featuredArticleRaw.map((article: PArticle) => ({
         ...article.attributes,
         id: article.id,
-        featuredImage: article.attributes.featuredImage.data.attributes.url
+        featuredImage: article.attributes.featuredImage.data.attributes.url,
+        publishedAt: article.attributes.publishedAt
 
     }));
 
-    processedArticles.sort((a,z) => new Date(z.publishedAt) - new Date(a.publishedAt))
+    processedArticles.sort((a: Particle, z: Particle) => new Date(z.publishedAt).getTime() - new Date(a.publishedAt).getTime());
+
 
 
 
@@ -77,14 +116,15 @@ export async function fetchArticlesData() {
     // console.log('fetcharticledata', articles)
     const featuredArticleRaw = data.data.data;
 
-    const processedArticles = featuredArticleRaw.map((article: { attributes: { featuredImage: { data: { attributes: { url: any; }; }; }; }; id: any; }) => ({
+    const processedArticles = featuredArticleRaw.map((article: PArticle) => ({
         ...article.attributes,
         id: article.id,
-        featuredImage: article.attributes.featuredImage.data.attributes.url
+        featuredImage: article.attributes.featuredImage.data.attributes.url,
+        publishedAt: article.attributes.publishedAt
 
     }));
 
-    processedArticles.sort((a,z) => new Date(z.publishedAt) - new Date(a.publishedAt))
+    processedArticles.sort((a: Particle, z: Particle) => new Date(z.publishedAt).getTime() - new Date(a.publishedAt).getTime());
 
     return processedArticles;
 }
