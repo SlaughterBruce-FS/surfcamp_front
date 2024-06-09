@@ -1,3 +1,4 @@
+import { IMAGE_URL } from '@/utils/utils'
 import React from 'react'
 
 interface Article {
@@ -18,7 +19,7 @@ function ArticleImage({ data }: Article) {
 
     return (
         <div className='mb-16 flex items-center justify-center'>
-            <img className='h-[500px] w-[full] object-cover' src={`http://localhost:1337${data.image.data.attributes.url}`} alt="text" />
+            <img className='h-[500px] w-[full] object-cover' src={`${IMAGE_URL}${data.image.data.attributes.url}`} alt="text" />
         </div>
     )
 }

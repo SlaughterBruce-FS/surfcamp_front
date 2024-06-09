@@ -1,7 +1,9 @@
 import axios, { AxiosResponse } from "axios"
 import { get } from "http"
 
-const BASE_URL = process.env.STRAPI_URL || 'http://localhost:1337/api'
+export const BASE_URL = process.env.STRAPI_URL || 'http://localhost:1337/api'
+
+export const IMAGE_URL = process.env.IMAGE_URL|| 'http://localhost:1337/'
 
 export async function fetchStraiData(route: string) {
     const url = `${BASE_URL}/${route}`
