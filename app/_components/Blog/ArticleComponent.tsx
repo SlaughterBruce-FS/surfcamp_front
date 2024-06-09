@@ -1,4 +1,4 @@
-import { reauthenticateWithCredential } from 'firebase/auth';
+// import { reauthenticateWithCredential } from 'firebase/auth';
 import React from 'react'
 import ArticleHeadline from './ArticleHeadline';
 import ParagraphWithImage from './ParagraphWithImage';
