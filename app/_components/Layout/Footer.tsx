@@ -7,28 +7,25 @@ const Footer = () => {
     const navItems = [
         {
             display: "the camp",
-            sluf: "/"
+            slug: "/"
         },
-        {
-            display: "the experience",
-            sluf: "/experience"
-        },
+
         {
             display: "the blog",
-            sluf: "/blog"
+            slug: "/blog"
         }
     ]
 
     const footerItems = [
         {
             display: "Imprint",
-            sluf: "/"
+            slug: "/"
         }, {
             display: "terms & conditions",
-            sluf: "/"
+            slug: "/"
         }, {
             display: "Data & Protection",
-            sluf: "/"
+            slug: "/"
         }
     ]
     return (
@@ -37,14 +34,14 @@ const Footer = () => {
                 <Image src={logo} alt='logo' height={80} />
                 <ul className="gap gap-10 flex text-2xl capitalize">
                     {navItems.map((link, index) => (
-                        <Link key={index} href={link.sluf} >{link.display}</Link>
+                        <Link key={index} href={link.slug} >{link.display}</Link>
                     ))}
                 </ul>
             </div>
             <div className='flex justify-between items-center mt-4 container mx-auto'>
                 <ul className="gap gap-10 flex text-2xl capitalize">
                     {footerItems.map((link, index) => (
-                        <Link key={index} href={link.sluf} >{link.display}</Link>
+                        <Link key={index} href={link.slug} >{link.display}</Link>
                     ))}
                 </ul>
 
