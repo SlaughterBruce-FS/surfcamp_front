@@ -9,10 +9,7 @@ const Footer = () => {
             display: "the camp",
             sluf: "/"
         },
-        // {
-        //     display: "the experience",
-        //     sluf: "/experience"
-        // }, 
+
         {
             display: "the blog",
             sluf: "/blog"
