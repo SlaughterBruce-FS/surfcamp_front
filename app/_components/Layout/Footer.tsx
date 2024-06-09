@@ -32,11 +32,7 @@ const Footer = () => {
         <footer className=' bg-black text-white'>
             <div className='flex container mx-auto justify-between items-center mb-4'>
                 <Image src={logo} alt='logo' height={80} />
-                <ul className="gap gap-10 flex text-2xl capitalize">
-                    {navItems.map((link, index) => (
-                        <Link key={index} href={link.slug} >{link.display}</Link>
-                    ))}
-                </ul>
+
             </div>
             <div className='flex justify-between items-center mt-4 container mx-auto'>
                 <ul className="gap gap-10 flex text-2xl capitalize">
