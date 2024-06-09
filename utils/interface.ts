@@ -15,7 +15,7 @@ export interface Article {
         isHighlightArticle: boolean,
         createdAt: Date,
         updatedAt: Date,
-        publishedAt: Date,
+        publishedAt: string,
         featuredImage: string,
         articleContent: [
             ArticleContent

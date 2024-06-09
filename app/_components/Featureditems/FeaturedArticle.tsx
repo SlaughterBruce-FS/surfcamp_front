@@ -8,7 +8,7 @@ interface Article {
     article: {
         headline?: string,
         slug?: string
-        publishedAt?: Date,
+        publishedAt: string,
         featuredImage?: string,
 
     }

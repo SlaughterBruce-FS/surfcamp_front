@@ -11,7 +11,7 @@ interface Item {
     id: number,
     headline?: string,
     slug?: string
-    publishedAt?: Date,
+    publishedAt: string,
     featuredImage?: string,
 
 }
