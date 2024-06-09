@@ -9,10 +9,12 @@ const Header = () => {
         {
             display: "the camp",
             slug: "/"
-        }, {
-            display: "the experience",
-            slug: "/experience"
-        }, {
+        },
+        // {
+        //     display: "the experience",
+        //     slug: "/experience"
+        // }, 
+        {
             display: "the blog",
             slug: "/blog"
         }
@@ -26,7 +28,7 @@ const Header = () => {
                 ))}
             </ul>
 
-            <Link href='/events' className="text-4xl hidden md:flex rounded-full bg-black text-white px-6 py-4"  >Book Now</Link>
+            <Link href='/' className="text-4xl hidden md:flex rounded-full bg-black text-white px-6 py-4"  >Book Now</Link>
         </header>
     )
 }
